@@ -30,7 +30,7 @@ describe('NASA Router', () => {
 
   it('returns NEO feed', async () => {
     axios.get.mockResolvedValueOnce({ data: { near_earth_objects: [] } });
-    const res = await request(app).get('/api/neo');
+    const res = await request(app).get('/api/nasa/neo');
     expect(res.status).toBe(200);
     expect(res.body.near_earth_objects).toBeDefined();
   });
